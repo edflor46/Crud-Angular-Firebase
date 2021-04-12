@@ -1,0 +1,54 @@
+
+<div class="mt-3 table-responsive animate__animated animate__fadeInRight">
+  <table *ngIf="!loading && contactos.length > 0" class="table">
+    <thead>
+      <tr>
+        <th class="text-center" scope="col">#</th>
+        <th class="text-center" scope="col">Nombre(s)</th>
+        <th class="text-center" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contacto of contactos; let i = index">
+        <th class="align-middle text-center" scope="row">{{ i + 1 }}</th>
+        <td class="align-middle text-center">{{ contacto.nombre }}</td>
+        <td class="align-middle text-center">
+
+          <button type="button" [routerLink]="['/ver-contacto', contacto.id]" class="btn btn-warning m-1">
+            <i class="far fa-eye"></i>
+          </button>
+
+          <button type="button" [routerLink]="['/contacto', contacto.id]" class="btn btn-primary m-1">
+            <i class="fas fa-pencil-alt"></i>
+          </button>
+
+          <button type="button" (click)="borrarContacto(contacto, i)" class="btn btn-danger m-1">
+            <i class="far fa-trash-alt"></i>
+          </button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div
+  *ngIf="!loading && contactos.length === 0"
+  class="alert alert-warning text-center mt-3 animate__animated animate__fadeIn"
+>
+  <h4 class="alert-heading">No hay registros</h4>
+  <span>Presione el boton "Agregar" para comenzar a crear un contacto</span>
+</div>
+
+
+<div
+ *ngIf="loading" class="alert alert-info text-center mt-3 "
+>
+<h4 class="alert-heading">Cargando</h4>
+<p>
+  <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+</p>
+
+<p class="mb-0">Espera por favor</p>
+</div>
+

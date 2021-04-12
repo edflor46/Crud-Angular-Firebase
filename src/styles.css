@@ -1,0 +1,76 @@
+/* -------------------------------------------------------------------------- */
+/*                                    Fonts                                   */
+/* -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 Background                                 */
+/* -------------------------------------------------------------------------- */
+body{
+
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Buttom                                   */
+/* -------------------------------------------------------------------------- */
+.btn-custom{
+    background-image: linear-gradient( 135deg, #3B2667 10%, #BC78EC 100%) !important;
+    color: #fff !important;
+    transition:  ease-in-out .4s !important;
+    
+}
+
+.btn-custom:hover{
+    background-image: linear-gradient( 135deg, #FAB2FF 10%, #1904E5 100%) !important;
+    
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    Input                                   */
+/* -------------------------------------------------------------------------- */
+
+.form-control{
+     background-color: transparent;
+     border: 1px solid #4b3078;
+}
+
+.form-control:focus{
+    background-color: transparent !important;
+     border: 1px solid #4b3078 !important;
+}
+
+.form-text{
+    margin-top: -0.75rem !important;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    Card                                    */
+/* -------------------------------------------------------------------------- */
+.card{
+    background-color: transparent !important;
+}
+
+.list-group-item{
+    background-color: transparent !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Details                                  */
+/* -------------------------------------------------------------------------- */
+.detail-contacto{
+    font-size: 18px;
+    font-weight: 400;
+}

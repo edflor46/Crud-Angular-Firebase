@@ -1,0 +1,40 @@
+<div class="card offset-md-2 col-md-8 mt-3 animate__animated animate__fadeInLeftBig">
+  <div class="card-header card-brackgound">
+    <h3>
+      Contacto: <small>{{ contacto?.nombre }}</small>
+    </h3>
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <strong>Nombre(s):</strong>
+        <span class="float-end detail-contacto">{{ contacto?.nombre }}</span>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Apellido(s):</strong>
+        <span class="float-end detail-contacto">{{ contacto?.apellidos }}</span>
+      </li>
+
+      <li class="list-group-item">
+        <strong> Email: </strong>
+        <span class="float-end detail-contacto">{{ contacto?.email }}</span>
+      </li>
+
+      <li class="list-group-item">
+        <strong> Fecha de creacion: </strong>
+        <span class="float-end detail-contacto">{{
+          contacto?.fecha | date
+        }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card-footer">
+    <button type="button" class="btn btn-danger" routerLink="/home">
+      <i class="fas fa-reply-all"></i>
+      Volver
+    </button>
+  </div>
+</div>

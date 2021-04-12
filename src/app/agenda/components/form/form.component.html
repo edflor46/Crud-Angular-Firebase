@@ -1,0 +1,140 @@
+<div class="animate__animated animate__fadeInLeftBig">
+  <div *ngIf="actualizar; else crear" class="mt-3">
+    <h1 class="text-center">Actualizar contacto</h1>
+    <hr />
+  </div>
+
+  <ng-template #crear>
+    <div class="mt-3">
+      <h1 class="text-center">Nuevo contacto</h1>
+      <hr />
+    </div>
+  </ng-template>
+
+  <form [formGroup]="formAgregar" autocomplete="off" (ngSubmit)="guardar()">
+    <input type="hidden" formControlName="id" />
+    <input type="hidden" formControlName="fecha" />
+    <div class="row justify-content-center">
+      <!--Nombre-->
+      <div class="justify-content-center col-md-8">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">
+            <i class="fas fa-user-edit"></i>
+          </span>
+          <input
+            type="tel"
+            class="form-control"
+            formControlName="nombre"
+            ng-c
+            placeholder="Ingresar nombre(s)"
+          />
+        </div>
+
+        <!--Error nombre-->
+        <div
+          *ngIf="validInput('nombre')"
+          class="input-group mb-3 animate__animated animate__rubberBand"
+        >
+          <span class="form-text text-danger"
+            >Ingrese un nombre valido, el nombre debe tener al menos 3
+            caracteres
+          </span>
+        </div>
+      </div>
+
+      <!--Apellidos-->
+      <div class="justify-content-center col-md-8">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">
+            <i class="fas fa-user-tag"></i>
+          </span>
+          <input
+            type="tel"
+            class="form-control"
+            formControlName="apellidos"
+            ng-c
+            placeholder="Ingresar apellidos"
+          />
+        </div>
+
+        <!--Error nombre-->
+        <div
+          *ngIf="validInput('apellidos')"
+          class="input-group mb-3 animate__animated animate__rubberBand"
+        >
+          <span class="form-text text-danger"
+            >Ingrese un apellido valido, el apellido debe tener al menos 3
+            caracteres
+          </span>
+        </div>
+      </div>
+
+      <!--Telefono-->
+      <div class="justify-content-center col-md-8">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">
+            <i class="fas fa-phone-alt"></i>
+          </span>
+          <input
+            type="tel+"
+            class="form-control"
+            formControlName="telefono"
+            placeholder="Ingresar telefono"
+          />
+        </div>
+
+        <!--Error telefono-->
+        <div
+          *ngIf="validInput('telefono')"
+          class="input-group mb-3 animate__animated animate__rubberBand"
+        >
+          <span class="form-text text-danger"
+            >Ingrese un telefono valido de 10 digitos</span
+          >
+        </div>
+      </div>
+
+      <!--Correo electronico-->
+      <div class="justify-content-center col-md-8">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">
+            <i class="fas fa-at"></i>
+          </span>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            placeholder="Ingresar correo electronico"
+          />
+        </div>
+
+        <!--Error correo electronico-->
+        <div
+          *ngIf="validInput('email')"
+          class="input-group mb-3 animate__animated animate__rubberBand"
+        >
+          <span class="form-text text-danger"
+            >Ingrese un correo electronico valido "example@dominio.com"</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-3">
+      <div class="col-sm-10 col-md-8">
+        <button type="button" class="btn btn-danger" (click)="toHome()">
+          <i class="fas fa-reply-all"></i>
+          Volver
+        </button>
+
+        <button
+          type="submit"
+          [disabled]="formAgregar.invalid"
+          class="btn btn-success float-end"
+        >
+          Guardar contacto
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
